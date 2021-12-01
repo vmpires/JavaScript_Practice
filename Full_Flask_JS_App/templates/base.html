@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet"/>
+    <title>Clube de Regatas do Flamengo</title>
+</head>
+<body>
+    <header>
+        <div class="flex-header">
+            <img src="{{url_for('static', filename='images/favicon.ico')}}" weight="100px" height="100px">
+            <h1>Clube de Regatas do Flamengo</h1>
+        </div>
+            <p>Seja bem vindo(a) ao site do maior e melhor clube da história do Futebol</p>
+    </header>
+        {% block conteudo %}{% endblock %}
+    <footer>
+
+    </footer>
+</body>
+</html>

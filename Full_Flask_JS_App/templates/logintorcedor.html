@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<main>
+    <h1>Clube do Torcedor</h1>
+    {% if session.usuario %}
+        <h2>Bem vindo {{ session.usuario }}!</h2>
+
+        <a href="/sair"><p>Sair</p></a>
+    {% else %}
+        <form method="POST">
+            {% for erro in erros%}
+            <div class=erro>
+                {{ erro }}
+            </div>
+            {% endfor %}
+            <legend>Faça seu login</legend><br>
+            <label for="usuario">Usuário</label>
+            <input id="usuario" name="usuario" type="text"><br><br>
+            <label for="senha">Senha</label>
+            <input id="senha" name="senha" type="text"><br><br>
+            <button type="submit" class="botaoenviar">Enviar</button>
+        </form>
+    {% endif %}
+</main>
+{% endblock %}
